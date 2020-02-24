@@ -18,7 +18,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class Protocol1Client {
     
     static int portNo = 11337;
-    static String hexKey= NOT TELLING;
+    static String hexKey=" NOT TELLING";
 
     public static void main (String[] args) {
 	// Listen for connections, when client connects spin off a 
@@ -67,8 +67,8 @@ public class Protocol1Client {
     	 // Protocol Step 1
     		// We should be sent the ascii for "Connect Protocol 1"
     		byte[] message1 = new byte[18];
-    		inStream.read(message1);
-    		if (debug) System.out.println("Got M1: "+new String(message1));
+    		outStream.write(message1);
+    		if (debug) System.out.println("I have sent a message"+"(message1)");
     	
     	   
     		
@@ -125,8 +125,6 @@ public class Protocol1Client {
     	        }
     	        
 
-    	        private static String secretValue() {
-    	    	
-    	        }
+    	       
     	}
     }
